@@ -5,6 +5,7 @@ const hashPassword = require('../helpers/hashPassword')
 const usersSchema = new Schema({
   email: {
     type: String,
+    required: true,
     validate: [{
       validator: function(value) {
         return new Promise ((resolve, reject) => {
@@ -24,9 +25,10 @@ const usersSchema = new Schema({
       message: props => `${props.value} is already used!`
     }]
   },
-  password: String,
-  first_name: String,
-  last_name: String
+  password: {
+    type: String,
+    required: true
+  },
 });
 
 

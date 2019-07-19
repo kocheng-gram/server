@@ -14,6 +14,14 @@ class ControllerPost {
       next({status: 500, message: 'unable to upload'})
     }
   }
+
+  static findALl(req, res, next) {
+    Post.find()
+    .then(result => {
+      res.status(200).json(result)
+    })
+    .catch(next)
+  }
 }
 
 module.exports = ControllerPost

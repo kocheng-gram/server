@@ -10,5 +10,6 @@ const multer = _multer({
 });
 
 router.post('/', multer.single('image'), gcsMiddleware.sendUploadToGCS , ControllerPost.post)
+router.get('/', ControllerPost.findAll)
 
 module.exports = router
