@@ -15,7 +15,7 @@ class ControllerPost {
     }
   }
 
-  static findALl(req, res, next) {
+  static findAll(req, res, next) {
     Post.find()
     .then(result => {
       res.status(200).json(result)
