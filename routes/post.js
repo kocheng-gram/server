@@ -26,6 +26,7 @@ router.post('/validate', uploadToLocal.single('image'), (req, res, next) => {
 
           for (let i = 0; i < labels.length; i++) {
             if (labels[i].description == 'Cat') catData = labels[i]
+            else res.status(200).json({score: 0.1})
           }
 
           if (catData !== null && catData.score >= 0.9) {

@@ -14,7 +14,7 @@ exports.sendUploadToGCS = (req, res, next) => {
         next({status: 400, message: 'Image required'})
     }
 
-    const bucketName = 'mini-wp.jays.best';
+    const bucketName = 'kocheng-gram-storage';
     const bucket = storage.bucket(bucketName);
     const gcsFileName = `${Date.now()}-${req.file.originalname}`;
     const file = bucket.file(gcsFileName);
